@@ -2,10 +2,13 @@ on:
   push:
     branshes:
       - '*'
-
 jobs:
   run_tests:
     runs-on: [ubuntu-latest]
+
+    env:
+      TELEGRAM_BOT_KEY: secrets.TELEGRAM_BOT_KEY
+      TARGET_ID: sescrets.TARGET_ID
 
     steps:
       - uses: actions/checkout@master
