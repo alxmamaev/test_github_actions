@@ -4,6 +4,7 @@ on:
       - '*'
 jobs:
   run_tests:
+    name: basic_tests
     runs-on: [ubuntu-latest]
 
     env:
