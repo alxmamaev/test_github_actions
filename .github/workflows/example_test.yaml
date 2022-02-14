@@ -1,7 +1,7 @@
 on:
-  push:
+  pull_request:
     branshes:
-      - '*'
+      - master
 jobs:
   run_tests:
     name: basic_tests
@@ -21,3 +21,17 @@ jobs:
         run: pip install -r requirements.txt 
       - name: Run tests
         run: python3 test.py
+
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!'
+            })
