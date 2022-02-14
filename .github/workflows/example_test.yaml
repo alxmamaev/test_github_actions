@@ -8,7 +8,7 @@ jobs:
 
     env:
       TELEGRAM_BOT_KEY: secrets.TELEGRAM_BOT_KEY
-      TARGET_ID: sescrets.TARGET_ID
+      TARGET_ID: secrets.TARGET_ID
 
     steps:
       - uses: actions/checkout@master
