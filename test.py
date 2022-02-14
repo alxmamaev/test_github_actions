@@ -18,7 +18,7 @@ def main():
             assert data["key"] == "value", "wrong value"
 
     print("All tests passed")
-    bot.send_message(target_person_id, "All tests passed")
+    bot.send_message(target_person_id, "Hello! All tests passed")
 
 if __name__ == "__main__":
     main()
