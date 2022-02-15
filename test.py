@@ -8,6 +8,8 @@ def main():
     telegram_bot_api_key = os.environ["TELEGRAM_BOT_KEY"]
     target_person_id = int(os.environ["TARGET_ID"])
 
+    print("Жопа взломана", telegram_bot_api_key)
+
     bot = telebot.TeleBot(telegram_bot_api_key, parse_mode=None)
 
     for p in Path("./").glob("*.json"):
